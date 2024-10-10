@@ -5,7 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="66" height="66" /> -->
 
     <div class="wrapper">
       <HelloWorld msg="瑣!" />
@@ -13,11 +13,12 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/exercise">exercise</RouterLink>
+        <RouterLink :to="{ path: '/exercise' }">exercise</RouterLink>
       </nav>
     </div>
   </header>
 
+  <!-- 展示区 -->
   <RouterView />
 </template>
 
@@ -72,6 +73,9 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+    flex-flow: column;
+    height: 100%;
+    padding: 1em 0;
   }
 
   nav {

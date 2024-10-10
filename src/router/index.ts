@@ -20,7 +20,20 @@ const router = createRouter({
     {
       path: '/exercise',
       name: 'exercise',
-      component: () => import('../views/ExerciseView.vue')
+      component: () => import('../views/ExerciseView.vue'),
+      // redirect: '/exercise/A1',
+      children: [
+        {
+          path: 'A1',
+          name: 'A1',
+          component: () => import('../views/exercise/A1.vue')
+        },
+        {
+          path: 'A2',
+          name: 'A2',
+          component: () => import('../views/exercise/A2.vue')
+        },
+      ]
     },
   ]
 })
